@@ -3,19 +3,11 @@
  * Configuration parameters common to all entry points.
  */
 return [
+    'params' => ['BrandName' => 'Webmized Latam'],
     'preload' => ['log'],
     'import' => [
         'common.components.*',
         'common.models.*',
-        'common.modules.user.models.*',
-        'common.modules.user.components.*',
-        'common.modules.rights.*',
-        'common.modules.rights.components.*',
-
-        'application.modules.user.models.*',
-        'application.modules.user.components.*',
-        'application.modules.rights.*',
-        'application.modules.rights.components.*',
         // The following two imports are polymorphic and will resolve against wherever the `basePath` is pointing to.
         // We have components and models in all entry points anyway
         'application.components.*',
@@ -55,28 +47,5 @@ return [
                 ],
             ]
         ],
-        'user'=>[
-            'class'=>'RWebUser',
-            // enable cookie-based authentication
-            'allowAutoLogin'=>true,
-            'loginUrl'=>array('/user/login')
-        ],
-        'authManager'=>[
-            'class'=>'RDbAuthManager',
-            'connectionID'=>'db',
-            'defaultRoles'=>array('Authenticated', 'Guest'),
-        ]
-    ],
-    'modules' =>[
-        'user' =>[
-            'class' =>'common.modules.user.UserModule',
-            'tableUsers' => 'users',
-            'tableProfiles' => 'profiles',
-            'tableProfileFields' => 'profiles_fields'
-        ],
-        'rights' =>[
-            'class' =>'common.modules.rights.RightsModule',
-            //'install' => true
-        ]
     ]
 ];
