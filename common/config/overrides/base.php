@@ -3,6 +3,7 @@
  * Configuration parameters common to all entry points.
  */
 return [
+    'params' => ['BrandName' => 'Webmized Latam'],
     'preload' => ['log'],
     'import' => [
         'common.components.*',
